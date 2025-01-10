@@ -6,17 +6,16 @@ public class CameraFollow : MonoBehaviour
 {
     float camX;
     public bool isLeftHanded;
-    bool isLocked = true;
     public float mouseSensitivity = 2f;
-    float cameraVerticalRotation = 0f;
     public Transform player;
 
     // Start is called before the first frame update
     void Start()
     {
-        camX = transform.localPosition.x;
-        isLocked = true;
         Cursor.lockState = CursorLockMode.Locked;
+        Camera.main.transform.localPosition = new Vector3(0.75f, 1, -2.5f);
+        camX = transform.localPosition.x;
+        Camera.main.transform.localRotation = Quaternion.Euler(20, 0, 0);
     }
 
     // Update is called once per frame
