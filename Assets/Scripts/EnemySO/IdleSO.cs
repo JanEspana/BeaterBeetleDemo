@@ -7,6 +7,7 @@ public class IdleSO : StatesSO
 {
     public override void OnStateEnter(EnemyController ec)
     {
+        ec.StartCoroutine(StartChasing(ec));
     }
 
     public override void OnStateExit(EnemyController ec)
@@ -15,5 +16,10 @@ public class IdleSO : StatesSO
 
     public override void OnStateUpdate(EnemyController ec)
     {
+    }
+    IEnumerator StartChasing(EnemyController ec)
+    {
+        yield return new WaitForSeconds(2);
+        ec.GoToState<ChaseSO>();
     }
 }

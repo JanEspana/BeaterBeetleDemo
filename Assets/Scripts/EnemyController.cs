@@ -6,11 +6,9 @@ public class EnemyController : MonoBehaviour
 {
     public float HP;
     public StatesSO currentState;
+    public Chase chase;
+    public GameObject player;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     public void GoToState<T>() where T : StatesSO
     {
@@ -27,6 +25,10 @@ public class EnemyController : MonoBehaviour
         {
             HP = 0;
             GoToState<DieSO>();
+        }
+        else
+        {
+            GoToState<StunSO>();
         }
     }
     public void TakeDamage(float dmg)

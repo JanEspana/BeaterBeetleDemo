@@ -10,9 +10,11 @@ public class ChaseSO : StatesSO
     }
     public override void OnStateExit(EnemyController ec)
     {
+        ec.chase.StopChase();
     }
     public override void OnStateUpdate(EnemyController ec)
     {
         Debug.Log("Chasing");
+        ec.chase.ChaseTarget(ec.player.transform, ec.transform);
     }
 }
