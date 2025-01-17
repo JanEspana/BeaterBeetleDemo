@@ -7,6 +7,8 @@ public class AttackSO : StatesSO
 {
     public override void OnStateEnter(EnemyController ec)
     {
+        Debug.Log(">:(");
+
     }
 
     public override void OnStateExit(EnemyController ec)
@@ -15,6 +17,6 @@ public class AttackSO : StatesSO
 
     public override void OnStateUpdate(EnemyController ec)
     {
-        Debug.Log("Attacking");
+        ec.attack.Attack();
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody rb;
-    float speed = 100f;
+    public float speed;
     bool isGrounded;
 
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Moving();
         Jump();

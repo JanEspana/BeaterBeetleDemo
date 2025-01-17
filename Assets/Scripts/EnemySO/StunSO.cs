@@ -6,6 +6,7 @@ public class StunSO : StatesSO
 {
     public override void OnStateEnter(EnemyController ec)
     {
+        ec.chase.enabled = false;
         ec.gameObject.GetComponent<Renderer>().material.color = Color.red;
         ec.StartCoroutine(Stun(ec));
     }
@@ -19,8 +20,9 @@ public class StunSO : StatesSO
     }
     IEnumerator Stun(EnemyController ec)
     {
-        yield return new WaitForSeconds(0.1f);
-        ec.gameObject.GetComponent<Renderer>().material.color = Color.white;
+        yield return new WaitForSeconds(ec.stun);
+        ec.chase.enabled = true;
+        ec.gameObject.GetComponent<Renderer>().material.color = ec.mat.color;
         ec.GoToState<ChaseSO>();
     }
 }

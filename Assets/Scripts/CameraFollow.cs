@@ -13,9 +13,9 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Camera.main.transform.localPosition = new Vector3(0.75f, 1, -2.5f);
+        Camera.main.transform.localPosition = new Vector3(0.75f, 2.5f, -3f);
         camX = transform.localPosition.x;
-        Camera.main.transform.localRotation = Quaternion.Euler(20, 0, 0);
+        Camera.main.transform.localRotation = Quaternion.Euler(30, 0, 0);
     }
 
     // Update is called once per frame

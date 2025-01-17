@@ -19,7 +19,7 @@ public class IdleSO : StatesSO
     }
     IEnumerator StartChasing(EnemyController ec)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         ec.GoToState<ChaseSO>();
     }
 }

@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a49afecd288a07544a1fbe6fd3a70aaf, type: 3}
-  m_Name: ChaseSO
+  m_Script: {fileID: 11500000, guid: 6bb45bb450141b944af26d4ca71e2ae2, type: 3}
+  m_Name: KnockbackSO
   m_EditorClassIdentifier: 
   states:
-  - {fileID: 11400000, guid: a014237ae51650b4aa4a586095d37169, type: 2}
   - {fileID: 11400000, guid: 2263d98c68e73e8468fec6458b03d494, type: 2}
-  - {fileID: 11400000, guid: 4f468f96d55804a4bb47b339eea98885, type: 2}
   - {fileID: 11400000, guid: 3474238c41300aa4ea48f8eb2568b7fd, type: 2}
-  - {fileID: 11400000, guid: cfef6ca896dad7a4abbd933ad59a8ed3, type: 2}
