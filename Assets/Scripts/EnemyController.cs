@@ -6,7 +6,7 @@ public class EnemyController : Character
 {
     public StatesSO currentState;
     public Chase chase;
-    public AttackBehaviourEnemy attack;
+    public AttackBehaviourGeneric attack;
     public GameObject player;
     public Material mat;
     public float stun;
@@ -15,7 +15,7 @@ public class EnemyController : Character
     public void Awake()
     {
         chase = GetComponent<Chase>();
-        attack = GetComponent<AttackBehaviourEnemy>();
+        attack = GetComponent<AttackBehaviourGeneric>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
     void Start()

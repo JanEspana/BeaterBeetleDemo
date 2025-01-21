@@ -623,8 +623,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1.5}
-  m_Center: {x: -0.4, y: 0, z: 0}
+  m_Size: {x: 1.4362341, y: 1.439371, z: 1.5}
+  m_Center: {x: -0.61811817, y: -0.21968523, z: 1.2396598e-14}
 --- !u!23 &443445093
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1033,6 +1033,7 @@ MonoBehaviour:
   enemyHPBar: {fileID: 33593263}
   enemyPrefabs:
   - {fileID: 3259728546879240063, guid: ae9f7158d7dbcbd45b00d5e3612e372e, type: 3}
+  enemy: {fileID: 0}
 --- !u!4 &944985218
 Transform:
   m_ObjectHideFlags: 0
@@ -1387,7 +1388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a37b425f029592647a478b46178fcfc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 10
 --- !u!65 &1178522510
 BoxCollider:
   m_ObjectHideFlags: 0

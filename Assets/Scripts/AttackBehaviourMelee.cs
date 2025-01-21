@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackBehaviourEnemy : MonoBehaviour
+public class AttackBehaviourMelee : AttackBehaviourGeneric
 {
     public GameObject leftPunch, rightPunch;
     public Player player;
@@ -12,7 +12,7 @@ public class AttackBehaviourEnemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
-    public void Attack()
+    public override void Attack()
     {
         if (actualPunch && player.HP > 0)
         {
