@@ -5,13 +5,8 @@ using UnityEngine;
 public class AttackBehaviourMelee : AttackBehaviourGeneric
 {
     public GameObject leftPunch, rightPunch;
-    public Player player;
     bool actualPunch, isAttacking;
     float attackCooldown = 0.3f;
-    private void Awake()
-    {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-    }
     public override void Attack()
     {
         if (actualPunch && player.HP > 0)

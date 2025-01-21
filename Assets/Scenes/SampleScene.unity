@@ -1032,7 +1032,7 @@ MonoBehaviour:
   playerHPBar: {fileID: 364942991}
   enemyHPBar: {fileID: 33593263}
   enemyPrefabs:
-  - {fileID: 3259728546879240063, guid: ae9f7158d7dbcbd45b00d5e3612e372e, type: 3}
+  - {fileID: 3259728546879240063, guid: c8bbedc0cdd43f04886672a44335ac75, type: 3}
   enemy: {fileID: 0}
 --- !u!4 &944985218
 Transform:
