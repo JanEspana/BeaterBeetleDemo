@@ -10,6 +10,7 @@ public class EnemyController : Character
     public GameObject player;
     public Material mat;
     public float stun;
+    public bool isDistance;
     // Start is called before the first frame update
 
     public void Awake()
@@ -55,7 +56,6 @@ public class EnemyController : Character
     public override void Die()
     {
         HP = 0;
-        GameManager.instance.enemy = null;
         GoToState<DieSO>();
     }
 

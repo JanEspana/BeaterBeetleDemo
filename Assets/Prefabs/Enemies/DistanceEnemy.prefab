@@ -159,7 +159,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -5100,6 +5100,7 @@ MonoBehaviour:
   player: {fileID: 0}
   mat: {fileID: 2100000, guid: 511d108f99f9df0418933daee648a87b, type: 2}
   stun: 0
+  isDistance: 0
 --- !u!114 &730772339023052022
 MonoBehaviour:
   m_ObjectHideFlags: 0

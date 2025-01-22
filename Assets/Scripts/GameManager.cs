@@ -9,15 +9,27 @@ public class GameManager : MonoBehaviour
     public GameObject playerHPBar, enemyHPBar;
     public List<GameObject> enemyPrefabs;
     public GameObject enemy;
+    public Canvas statsMenu, hpBars;
     void Awake()
     {
+        instance = this;
         playerHPBar.GetComponent<Slider>().value = playerHPBar.GetComponent<Slider>().maxValue;
-        GenerateEnemy();
+        StartRound();
     }
-    public void GenerateEnemy()
+    public void StartRound()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        statsMenu.gameObject.SetActive(false);
         enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)]);
         enemy.GetComponent<Character>().slider = enemyHPBar;
         enemyHPBar.GetComponent<Slider>().value = enemyHPBar.GetComponent<Slider>().maxValue;
+    }
+    private void Update()
+    {
+        if (enemy == null)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            statsMenu.gameObject.SetActive(true);
+        }
     }
 }
