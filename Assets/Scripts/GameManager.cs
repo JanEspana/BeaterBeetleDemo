@@ -6,20 +6,22 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public MenuManager menuManager;
     public GameObject playerHPBar, enemyHPBar;
     public List<GameObject> enemyPrefabs;
-    public GameObject enemy;
+    public GameObject enemy, player;
     public Canvas statsMenu, hpBars;
     void Awake()
     {
         instance = this;
+        player = GameObject.FindGameObjectWithTag("Player");
         playerHPBar.GetComponent<Slider>().value = playerHPBar.GetComponent<Slider>().maxValue;
         StartRound();
     }
     public void StartRound()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        statsMenu.gameObject.SetActive(false);
+        statsMenu.enabled = false;
         enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)]);
         enemy.GetComponent<Character>().slider = enemyHPBar;
         enemyHPBar.GetComponent<Slider>().value = enemyHPBar.GetComponent<Slider>().maxValue;
@@ -29,7 +31,7 @@ public class GameManager : MonoBehaviour
         if (enemy == null)
         {
             Cursor.lockState = CursorLockMode.None;
-            statsMenu.gameObject.SetActive(true);
+            statsMenu.enabled = true;
         }
     }
 }

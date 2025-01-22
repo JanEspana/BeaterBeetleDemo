@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : Character
 {
     public Camera cam;
+    public float calories;
     public override void CheckIfAlive(bool hasKnockback)
     {
         if (hasKnockback)
