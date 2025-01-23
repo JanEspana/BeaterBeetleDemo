@@ -20,11 +20,14 @@ public class MenuManager : MonoBehaviour
             player.HP += 3;
         }
         hpBar.value = GameManager.instance.player.GetComponent<Player>().HP/10;
+        UIhpBar.value = GameManager.instance.player.GetComponent<Player>().HP / 10;
         calories.text = GameManager.instance.player.GetComponent<Player>().calories.ToString();
     }
     public void NextBattle()
     {
         GameManager.instance.StartRound();
+        hpBar.value = GameManager.instance.player.GetComponent<Player>().HP / 10;
+        UIhpBar.value = GameManager.instance.player.GetComponent<Player>().HP / 10;
     }
     public void UpgradeHP()
     {
