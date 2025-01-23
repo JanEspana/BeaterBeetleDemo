@@ -18,5 +18,6 @@ public class AttackSO : StatesSO
     public override void OnStateUpdate(EnemyController ec)
     {
         ec.attack.Attack();
+
     }
 }

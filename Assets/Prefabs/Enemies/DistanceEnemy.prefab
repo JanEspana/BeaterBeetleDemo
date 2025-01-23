@@ -5138,7 +5138,7 @@ MonoBehaviour:
   player: {fileID: 0}
   mat: {fileID: 2100000, guid: 511d108f99f9df0418933daee648a87b, type: 2}
   stun: 0
-  isDistance: 0
+  isDistance: 1
 --- !u!114 &730772339023052022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5166,5 +5166,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  attackCooldown: 3
   sprayAttack: {fileID: 3446834740652275168}
   sprayCollider: {fileID: 2580030844881776327}

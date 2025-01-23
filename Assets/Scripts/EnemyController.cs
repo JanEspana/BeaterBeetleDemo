@@ -10,7 +10,7 @@ public class EnemyController : Character
     public GameObject player;
     public Material mat;
     public float stun;
-    public bool isDistance;
+    public bool isDistance = true;
     // Start is called before the first frame update
 
     public void Awake()

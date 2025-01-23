@@ -7,31 +7,25 @@ public class AttackBehaviourDistance : AttackBehaviourGeneric
 {
     public ParticleSystem sprayAttack;
     public Collider sprayCollider;
-    float attackCooldown = 3f;
     public override void Attack()
     {
-        if (attackCooldown == 3f && player.HP > 0)
+        if (attackCooldown >= 3f && player.HP > 0)
         {
             sprayCollider.enabled = true;
-            sprayAttack.Play();
             attackCooldown = 0;
+            sprayAttack.Play();
             StartCoroutine(StopAttack());
         }
-        else if (player.HP > 0 && attackCooldown != 3)
+        else if (player.HP > 0 && attackCooldown < 3)
         {
-            StartCoroutine(ResetCooldown());
+            attackCooldown += Time.deltaTime;
         }
     }
     IEnumerator StopAttack()
     {
         yield return new WaitForSeconds(0.5f);
-        sprayAttack.Stop();
-    }
-    IEnumerator ResetCooldown()
-    {
-        yield return new WaitForSeconds(3);
         sprayCollider.enabled = false;
-        attackCooldown = 3;
+        sprayAttack.Stop();
     }
     private void OnTriggerExit(Collider other)
     {

@@ -6,7 +6,6 @@ public class AttackBehaviourMelee : AttackBehaviourGeneric
 {
     public GameObject leftPunch, rightPunch;
     bool actualPunch, isAttacking;
-    float attackCooldown = 0.3f;
     public override void Attack()
     {
         if (actualPunch && player.HP > 0)
