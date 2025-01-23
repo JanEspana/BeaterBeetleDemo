@@ -28,6 +28,9 @@ public class MenuManager : MonoBehaviour
         GameManager.instance.StartRound();
         hpBar.value = GameManager.instance.player.GetComponent<Player>().HP / 10;
         UIhpBar.value = GameManager.instance.player.GetComponent<Player>().HP / 10;
+        GameManager.instance.player.gameObject.transform.position = new Vector3(0, 2, 0);
+        GameManager.instance.player.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+
     }
     public void UpgradeHP()
     {

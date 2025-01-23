@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Character
 {
@@ -25,5 +26,8 @@ public class Player : Character
         gameObject.GetComponent<AttackManager>().enabled = false;
         gameObject.GetComponent<Rigidbody>().useGravity = false;
         cam.gameObject.GetComponent<CameraFollow>().enabled = false;
+
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene("MainMenuDemo");
     }
 }
