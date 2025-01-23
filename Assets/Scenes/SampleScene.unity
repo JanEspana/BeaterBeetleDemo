@@ -1493,7 +1493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5709f3b2da46c449d28dd6a5abbaa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 10
+  dmg: 3
   rivalTag: Enemy
   isRecharged: 1
 --- !u!1 &516661089
@@ -2571,7 +2571,6 @@ MonoBehaviour:
   enemyHPBar: {fileID: 33593263}
   enemyPrefabs:
   - {fileID: 3259728546879240063, guid: c8bbedc0cdd43f04886672a44335ac75, type: 3}
-  - {fileID: 3259728546879240063, guid: ae9f7158d7dbcbd45b00d5e3612e372e, type: 3}
   enemy: {fileID: 0}
   player: {fileID: 0}
   statsMenu: {fileID: 1528741083}

@@ -10,6 +10,15 @@ public class MenuManager : MonoBehaviour
     public TextMeshProUGUI calories;
     public void ActiveCanvas()
     {
+        Player player = GameManager.instance.player.GetComponent<Player>();
+        if (player.HP + 3 > 10)
+        {
+            player.HP = 10;
+        }
+        else
+        {
+            player.HP += 3;
+        }
         hpBar.value = GameManager.instance.player.GetComponent<Player>().HP/10;
         calories.text = GameManager.instance.player.GetComponent<Player>().calories.ToString();
     }

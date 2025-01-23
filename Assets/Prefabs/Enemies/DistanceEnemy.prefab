@@ -64,6 +64,8 @@ GameObject:
   - component: {fileID: 3745248026148621878}
   - component: {fileID: 3446834740652275168}
   - component: {fileID: 4706395161560857748}
+  - component: {fileID: 1332701403909971367}
+  - component: {fileID: 2580030844881776327}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -4941,6 +4943,42 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &1332701403909971367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469646723075616451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23f64da734a6124a970b45326d9db9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 0.5
+  rivalTag: Player
+  isRecharged: 1
+--- !u!65 &2580030844881776327
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469646723075616451}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 7.7997727, y: 8.846094, z: 7.129186}
+  m_Center: {x: 0.24603295, y: 0.010170937, z: 4.017439}
 --- !u!1 &3259728546879240063
 GameObject:
   m_ObjectHideFlags: 0
@@ -5129,3 +5167,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   sprayAttack: {fileID: 3446834740652275168}
+  sprayCollider: {fileID: 2580030844881776327}

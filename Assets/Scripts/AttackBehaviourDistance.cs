@@ -6,11 +6,13 @@ using UnityEngine;
 public class AttackBehaviourDistance : AttackBehaviourGeneric
 {
     public ParticleSystem sprayAttack;
+    public Collider sprayCollider;
     float attackCooldown = 3f;
     public override void Attack()
     {
         if (attackCooldown == 3f && player.HP > 0)
         {
+            sprayCollider.enabled = true;
             sprayAttack.Play();
             attackCooldown = 0;
             StartCoroutine(StopAttack());
@@ -28,6 +30,7 @@ public class AttackBehaviourDistance : AttackBehaviourGeneric
     IEnumerator ResetCooldown()
     {
         yield return new WaitForSeconds(3);
+        sprayCollider.enabled = false;
         attackCooldown = 3;
     }
     private void OnTriggerExit(Collider other)
