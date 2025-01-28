@@ -4955,7 +4955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23f64da734a6124a970b45326d9db9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 0.5
+  dmg: 4
   rivalTag: Player
   isRecharged: 1
 --- !u!65 &2580030844881776327

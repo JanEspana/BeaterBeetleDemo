@@ -7,20 +7,22 @@ public class Movement : MonoBehaviour
 {
     Rigidbody rb;
     public float speed;
-    bool isGrounded;
+    public bool isGrounded;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
-
+    private void Update()
+    {
+        CheckFloor();
+        Jump();
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
         Moving();
-        Jump();
-        CheckGround();
     }
     void Moving()
     {
@@ -36,11 +38,10 @@ public class Movement : MonoBehaviour
             rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
         }
     }
-    void CheckGround()
+    void CheckFloor()
     {
-        float speedY = rb.velocity.y;
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.1f) && speedY == 0)
+        float y = rb.velocity.y;
+        if (Physics.Raycast(transform.position, Vector3.down, 0.5f) && y == 0)
         {
             isGrounded = true;
         }

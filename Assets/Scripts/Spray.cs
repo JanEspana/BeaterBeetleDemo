@@ -12,22 +12,28 @@ public class SprayDamage : AttackGeneric
         {
             if (!isAttacking)
             {
-                dmg = 1;
+                dmg = 4;
                 isAttacking = true;
                 Debug.Log("Spray hit " + dmg);
+
             }
             else
             {
                 dmg = 0;
             }
-            ParticleSystem particleSystem = GetComponent<ParticleSystem>();
-            other.gameObject.GetComponent<Player>().TakeDamage(dmg);
-            StartCoroutine(ResetAttack());
+            StartCoroutine(Spray(other));
         }
     }
     IEnumerator ResetAttack()
     {
         yield return new WaitForSeconds(3);
         isAttacking = false;
+    }
+    IEnumerator Spray(Collider other)
+    {
+        yield return new WaitForSeconds(0.5f);
+        ParticleSystem particleSystem = GetComponent<ParticleSystem>();
+        other.gameObject.GetComponent<Player>().TakeDamage(dmg);
+        StartCoroutine(ResetAttack());
     }
 }
