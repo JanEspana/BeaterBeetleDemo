@@ -9,7 +9,15 @@ public class Punch : AttackGeneric
         if (other.gameObject.tag == rivalTag)
         {
             other.gameObject.GetComponent<Character>().hasKnockback = false;
-            other.gameObject.GetComponent<Character>().TakeDamage(dmg);
+            
+            if (rivalTag == "Player" && !other.gameObject.GetComponent<Player>().isBlocking)
+            {
+                other.gameObject.GetComponent<Character>().TakeDamage(dmg);
+            }
+            else if (rivalTag == "Enemy")
+            {
+                other.gameObject.GetComponent<Character>().TakeDamage(dmg);
+            }
         }
     }
 }

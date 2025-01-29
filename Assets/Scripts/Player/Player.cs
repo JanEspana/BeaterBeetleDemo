@@ -7,6 +7,7 @@ public class Player : Character
 {
     public Camera cam;
     public float calories;
+    public bool isBlocking;
     public override void CheckIfAlive(bool hasKnockback)
     {
         if (hasKnockback)
@@ -29,5 +30,19 @@ public class Player : Character
 
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("MainMenuDemo");
+    }
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            isBlocking = true;
+            //busca movement de este objeto
+            gameObject.GetComponent<Movement>().speed=0;
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            isBlocking = false;
+            gameObject.GetComponent<Movement>().speed = 10;
+        }
     }
 }

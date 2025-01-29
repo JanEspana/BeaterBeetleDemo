@@ -9,7 +9,6 @@ public class AttackManager : MonoBehaviour
     bool isAttacking = false;
     public float attackCooldown = 0.3f, specialCooldown = 3f;
     public bool actualPunch = true;
-
     private void Awake()
     {
         leftPunchCollider = leftPunch.GetComponent<BoxCollider>();
@@ -36,7 +35,7 @@ public class AttackManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && horn.GetComponent<HornAttack>().isRecharged)
+        if (Input.GetKeyDown(KeyCode.E) && horn.GetComponent<HornAttack>().isRecharged && !gameObject.GetComponent<Player>().isBlocking)
         {
             AttackAnim(horn, hornCollider);
             horn.GetComponent<HornAttack>().isRecharged = false;

@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     Rigidbody rb;
     public float speed;
     public bool isGrounded;
+    public float dashCooldown = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class Movement : MonoBehaviour
     {
         CheckFloor();
         Jump();
+        Dash();
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -37,6 +39,28 @@ public class Movement : MonoBehaviour
         {
             rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
         }
+    }
+    void Dash()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldown <= 0 && !gameObject.GetComponent<Player>().isBlocking)
+        {
+            //check if moving
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            {
+                speed *= 5;
+                dashCooldown = 3;
+                StartCoroutine(DeactivateDash());
+            }
+            if (dashCooldown > 0)
+            {
+                dashCooldown -= Time.deltaTime;
+            }
+        }
+    }
+    IEnumerator DeactivateDash()
+    {
+        yield return new WaitForSeconds(0.1f);
+        speed /= 5;
     }
     void CheckFloor()
     {
