@@ -7,17 +7,28 @@ public class EnemyController : Character
     public StatesSO currentState;
     public Chase chase;
     public AttackBehaviourGeneric attack;
-    public GameObject player;
+    public GameObject target;
     public Material mat;
     public float stun;
     public bool isDistance = true;
+    public bool isAnt = false;
+    public bool foodIsAlive = false;
     // Start is called before the first frame update
 
     public void Awake()
     {
         chase = GetComponent<Chase>();
         attack = GetComponent<AttackBehaviourGeneric>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        if (isAnt && GameObject.FindGameObjectWithTag("Food") != null)
+        {
+            foodIsAlive = true;
+            target = GameObject.FindGameObjectWithTag("Food");
+        }
+        else
+        {
+            target = GameObject.FindGameObjectWithTag("Player");
+        }
+
     }
     void Start()
     {
@@ -61,15 +72,25 @@ public class EnemyController : Character
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        //falta implementar el ataque de la hormiga
+        if (other.gameObject.tag == "Player" && !foodIsAlive)
+        {
+            GoToState<AttackSO>();
+        }
+        else if (other.gameObject.tag == "Food" && isAnt)
         {
             GoToState<AttackSO>();
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !foodIsAlive)
         {
+            GoToState<ChaseSO>();
+        }
+        else if (other.gameObject.tag == "Food" && isAnt && foodIsAlive)
+        {
+            target = GameObject.FindGameObjectWithTag("Food");
             GoToState<ChaseSO>();
         }
     }

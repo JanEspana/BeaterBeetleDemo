@@ -29,7 +29,7 @@ public class StunSO : StatesSO
         }
         else
         {
-            Vector3 distance = ec.player.transform.position - ec.transform.position;
+            Vector3 distance = ec.target.transform.position - ec.transform.position;
             if (distance.magnitude < 4.5f)
             {
                 ec.GoToState<AttackSO>();

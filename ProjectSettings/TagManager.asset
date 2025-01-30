@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - punch
   - Floor
+  - Food
   layers:
   - Default
   - TransparentFX
