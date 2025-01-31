@@ -15,9 +15,12 @@ public class Chase : MonoBehaviour
     }
     public void ChaseTarget(Transform target, Transform self)
     {
-        //rb.MovePosition(Vector3.MoveTowards(self.position, target.position, speed * Time.deltaTime));
+        Vector3 targetPos = new Vector3(target.position.x, self.position.y, self.position.z);
+        rb.MovePosition(Vector3.MoveTowards(self.position, targetPos, speed * Time.deltaTime));
         Vector3 direction = target.position - self.position;
+        direction.y = 0;
         Quaternion rotation = Quaternion.LookRotation(direction);
+        rotation.x = 0;
         self.rotation = rotation;
         rb.velocity = direction.normalized * speed;
     }
