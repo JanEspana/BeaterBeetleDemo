@@ -12,7 +12,7 @@ public class FoodScript : Character
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject enemy in enemies)
             {
-                enemy.GetComponent<EnemyController>().target = GameObject.FindGameObjectWithTag("Player").transform;
+                //enemy.GetComponent<EnemyController>().target = GameObject.FindGameObjectWithTag("Player").transform;
             }
         }
     }
