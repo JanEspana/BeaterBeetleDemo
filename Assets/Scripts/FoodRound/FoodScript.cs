@@ -17,10 +17,6 @@ public class FoodScript : Character
             }
             Die();
         }
-        else
-        {
-            TakeDamage(1);
-        }
     }
 
     public override void Die()

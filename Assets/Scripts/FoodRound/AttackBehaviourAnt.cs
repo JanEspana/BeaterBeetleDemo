@@ -20,7 +20,7 @@ public class AttackBehaviourAnt : AttackBehaviourGeneric
             }
             else if (enemyController.foodIsAlive)
             {
-                enemyController.target.GetComponent<FoodScript>().CheckIfAlive(false);
+                enemyController.target.GetComponent<FoodScript>().TakeDamage(1);
             }
             enemyController.stun = 1;
             enemyController.knockback = 4;
