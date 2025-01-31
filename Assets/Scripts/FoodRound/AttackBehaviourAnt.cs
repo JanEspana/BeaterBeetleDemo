@@ -15,7 +15,7 @@ public class AttackBehaviourAnt : AttackBehaviourGeneric
         {
             if (!enemyController.foodIsAlive && !player.isBlocking)
             {
-                player.GetComponent<Player>().TakeDamage(1);
+                player.TakeDamage(1);
 
             }
             else if (enemyController.foodIsAlive)

@@ -80,7 +80,6 @@ public class EnemyController : Character
         }
         else if (other.gameObject.tag == "Food" && isAnt)
         {
-            Debug.Log("entrando a la comida");
             GoToState<AttackSO>();
         }
     }

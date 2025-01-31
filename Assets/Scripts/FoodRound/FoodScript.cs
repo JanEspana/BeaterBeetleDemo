@@ -12,7 +12,6 @@ public class FoodScript : Character
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject enemy in enemies)
             {
-                Debug.Log(enemy);
                 enemy.GetComponent<EnemyController>().target = GameObject.FindGameObjectWithTag("Player");
                 enemy.GetComponent<EnemyController>().foodIsAlive = false;
             }
