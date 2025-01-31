@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 2394510090436461038}
   - component: {fileID: 658009380148236872}
   - component: {fileID: 8921493199574576874}
-  - component: {fileID: 491366626428429271}
+  - component: {fileID: 2610808577501466896}
   m_Layer: 7
   m_Name: RightPunch
   m_TagString: Untagged
@@ -350,7 +350,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 2}
   m_Center: {x: -0.3, y: 0, z: -0.4}
---- !u!114 &491366626428429271
+--- !u!114 &2610808577501466896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -359,12 +359,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3552336577709297571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df557a87383f7541b3d71220ca86554, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a6be8a6e2a8b1e4d906c1f58c688260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 2
+  dmg: 1
   rivalTag: Player
-  isRecharged: 0
+  isRecharged: 1
+  blockable: 1
 --- !u!1 &5705530950396767097
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +378,7 @@ GameObject:
   - component: {fileID: 3429354382017366924}
   - component: {fileID: 1588554738491895080}
   - component: {fileID: 3281861810089206459}
-  - component: {fileID: 7744383702916470872}
+  - component: {fileID: 7990828626272886168}
   m_Layer: 7
   m_Name: LeftPunch
   m_TagString: Untagged
@@ -471,7 +472,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 2}
   m_Center: {x: -0.3, y: 0, z: 0.4}
---- !u!114 &7744383702916470872
+--- !u!114 &7990828626272886168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -480,9 +481,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5705530950396767097}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df557a87383f7541b3d71220ca86554, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a6be8a6e2a8b1e4d906c1f58c688260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 1
   rivalTag: Player
-  isRecharged: 0
+  isRecharged: 1
+  blockable: 1

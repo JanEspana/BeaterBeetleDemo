@@ -1369,12 +1369,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 401668024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df557a87383f7541b3d71220ca86554, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a6be8a6e2a8b1e4d906c1f58c688260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 2
+  dmg: 1.5
   rivalTag: Enemy
-  isRecharged: 0
+  isRecharged: 1
+  blockable: 1
 --- !u!1 &443445090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,7 +2921,7 @@ GameObject:
   - component: {fileID: 1138589717}
   - component: {fileID: 1138589716}
   - component: {fileID: 1138589715}
-  - component: {fileID: 1138589714}
+  - component: {fileID: 1138589719}
   m_Layer: 7
   m_Name: LeftPunch
   m_TagString: punch
@@ -2928,21 +2929,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1138589714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138589713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df557a87383f7541b3d71220ca86554, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dmg: 1
-  rivalTag: Enemy
-  isRecharged: 0
 --- !u!65 &1138589715
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3029,6 +3015,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1178522513}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1138589719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138589713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6be8a6e2a8b1e4d906c1f58c688260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1.5
+  rivalTag: Enemy
+  isRecharged: 1
+  blockable: 1
 --- !u!1 &1144076426
 GameObject:
   m_ObjectHideFlags: 0
@@ -3361,8 +3363,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 963194228}
-  - {fileID: 1138589718}
   - {fileID: 443445091}
+  - {fileID: 1138589718}
   - {fileID: 401668025}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

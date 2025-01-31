@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class Punch : AttackGeneric
 {
+    public bool blockable;
     public override void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == rivalTag)
         {
             other.gameObject.GetComponent<Character>().hasKnockback = false;
             
-            if (rivalTag == "Player" && !other.gameObject.GetComponent<Player>().isBlocking)
+            if (blockable)
             {
-                other.gameObject.GetComponent<Character>().TakeDamage(dmg);
+                if (rivalTag == "Player" && !other.gameObject.GetComponent<Player>().isBlocking)
+                {
+                    other.gameObject.GetComponent<Character>().TakeDamage(dmg);
+                }
+                else if (rivalTag == "Enemy")
+                {
+                    other.gameObject.GetComponent<Character>().TakeDamage(dmg);
+                }
             }
-            else if (rivalTag == "Enemy")
+            else
             {
                 other.gameObject.GetComponent<Character>().TakeDamage(dmg);
             }
