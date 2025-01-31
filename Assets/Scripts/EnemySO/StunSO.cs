@@ -7,6 +7,8 @@ public class StunSO : StatesSO
     public override void OnStateEnter(EnemyController ec)
     {
         ec.chase.enabled = false;
+        //deja quieto a ec
+        //ec.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         ec.gameObject.GetComponent<Renderer>().material.color = Color.red;
         ec.StartCoroutine(Stun(ec));
     }

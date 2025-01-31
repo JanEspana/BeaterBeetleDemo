@@ -11,7 +11,10 @@ public abstract class Character : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         HP -= dmg;
-        slider.GetComponent<Slider>().value = HP/10;
+        if (gameObject.GetComponent<EnemyController>() != null && !gameObject.GetComponent<EnemyController>().isAnt)
+        {
+            slider.GetComponent<Slider>().value = HP / 10;
+        }
         CheckIfAlive(hasKnockback);
     }
     public abstract void CheckIfAlive(bool hasKnockback);

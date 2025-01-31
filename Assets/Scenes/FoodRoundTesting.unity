@@ -151,12 +151,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 481255072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df557a87383f7541b3d71220ca86554, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a6be8a6e2a8b1e4d906c1f58c688260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 1
   rivalTag: Enemy
-  isRecharged: 0
+  isRecharged: 1
+  blockable: 0
 --- !u!65 &481255074
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -750,6 +751,7 @@ GameObject:
   - component: {fileID: 1059097361}
   - component: {fileID: 1059097360}
   - component: {fileID: 1059097359}
+  - component: {fileID: 1059097363}
   - component: {fileID: 1059097358}
   - component: {fileID: 1059097362}
   m_Layer: 0
@@ -872,6 +874,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1059097363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059097357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7e59830216a9c4e89ef345f153f0cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 2
+  hasKnockback: 0
+  slider: {fileID: 0}
 --- !u!1 &1183399104
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +904,8 @@ GameObject:
   - component: {fileID: 1183399107}
   - component: {fileID: 1183399105}
   - component: {fileID: 1183399112}
+  - component: {fileID: 1183399113}
+  - component: {fileID: 1183399114}
   m_Layer: 0
   m_Name: Ant
   m_TagString: Enemy
@@ -913,9 +932,10 @@ MonoBehaviour:
   chase: {fileID: 0}
   attack: {fileID: 0}
   target: {fileID: 0}
-  mat: {fileID: 0}
-  stun: 0
-  isDistance: 1
+  mat: {fileID: 2100000, guid: 764a58eca4b6e774ba5d61bbd3da6534, type: 2}
+  stun: 1
+  knockback: 5
+  isDistance: 0
   isAnt: 1
   foodIsAlive: 0
 --- !u!54 &1183399107
@@ -1025,7 +1045,7 @@ Transform:
   m_GameObject: {fileID: 1183399104}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.48, y: 2, z: 3.81}
+  m_LocalPosition: {x: -0.63, y: 2, z: 10.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1045,6 +1065,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   range: 0
+--- !u!114 &1183399113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183399104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7081fb1462348344aa57d00fb696e5fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 536702928}
+  attackCooldown: 1
+  enemyController: {fileID: 0}
+--- !u!135 &1183399114
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183399104}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1196965514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,12 +1377,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1759037283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df557a87383f7541b3d71220ca86554, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a6be8a6e2a8b1e4d906c1f58c688260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 2
+  dmg: 1
   rivalTag: Enemy
-  isRecharged: 0
+  isRecharged: 1
+  blockable: 0
 --- !u!65 &1759037285
 BoxCollider:
   m_ObjectHideFlags: 0

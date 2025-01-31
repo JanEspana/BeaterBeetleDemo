@@ -8,7 +8,10 @@ public class DieSO : StatesSO
     public override void OnStateEnter(EnemyController ec)
     {
         ec.target.GetComponent<Player>().calories += 100;
-        GameManager.instance.menuManager.ActiveCanvas();
+        if (!ec.isAnt)
+        {
+            GameManager.instance.menuManager.ActiveCanvas();
+        }
         Destroy(ec.gameObject);
     }
 

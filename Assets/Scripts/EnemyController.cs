@@ -10,6 +10,7 @@ public class EnemyController : Character
     public GameObject target;
     public Material mat;
     public float stun;
+    public int knockback = 5;
     public bool isDistance = true;
     public bool isAnt = false;
     public bool foodIsAlive = false;
@@ -79,6 +80,7 @@ public class EnemyController : Character
         }
         else if (other.gameObject.tag == "Food" && isAnt)
         {
+            Debug.Log("entrando a la comida");
             GoToState<AttackSO>();
         }
     }

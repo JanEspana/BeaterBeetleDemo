@@ -7,6 +7,7 @@ public class KnockbackSO : StatesSO
     public override void OnStateEnter(EnemyController ec)
     {
         ec.chase.enabled = false;
+        //ec.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         Rigidbody rb = ec.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         Knockback(ec, rb);
@@ -24,8 +25,8 @@ public class KnockbackSO : StatesSO
     }
     void Knockback(EnemyController ec, Rigidbody rb)
     {
-        rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
-        rb.AddForce(-ec.transform.forward * 5, ForceMode.Impulse);
+        rb.AddForce(Vector3.up * ec.knockback, ForceMode.Impulse);
+        rb.AddForce(-ec.transform.forward * ec.knockback, ForceMode.Impulse);
     }
     IEnumerator CheckGround(Rigidbody rb, GameObject self, EnemyController ec)
     {
