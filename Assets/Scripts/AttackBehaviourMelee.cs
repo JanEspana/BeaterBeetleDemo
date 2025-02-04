@@ -27,7 +27,7 @@ public class AttackBehaviourMelee : AttackBehaviourGeneric
         {
             isAttacking = true;
             collider.enabled = true;
-            punch.transform.position = punch.transform.position - punch.transform.right * 0.5f;
+            punch.transform.position -= punch.transform.right * 0.5f;
             StartCoroutine(ResetPosition(punch, collider));
         }
     }
@@ -35,7 +35,7 @@ public class AttackBehaviourMelee : AttackBehaviourGeneric
     {
         yield return new WaitForSeconds(attackCooldown);
         collider.enabled = false;
-        punch.transform.position = punch.transform.position + punch.transform.right * 0.5f;
+        punch.transform.position += punch.transform.right * 0.5f;
         isAttacking = false;
         actualPunch = !actualPunch;
     }

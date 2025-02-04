@@ -11,7 +11,7 @@ public abstract class Character : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         HP -= dmg;
-        if (gameObject.GetComponent<EnemyController>() != null && !gameObject.GetComponent<EnemyController>().isAnt)
+        if ((gameObject.GetComponent<EnemyController>() != null && !gameObject.GetComponent<EnemyController>().isAnt) || gameObject.GetComponent<Player>() != null)
         {
             slider.GetComponent<Slider>().value = HP / 10;
         }

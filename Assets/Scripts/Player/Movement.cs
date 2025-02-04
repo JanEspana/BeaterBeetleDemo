@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     public float speed;
     public bool isGrounded;
     public float dashCooldown = 3;
+    public float jumpForce = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,7 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(Vector3.up * 5, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
     void Dash()
@@ -64,8 +65,7 @@ public class Movement : MonoBehaviour
     }
     void CheckFloor()
     {
-        float y = rb.velocity.y;
-        if (Physics.Raycast(transform.position, Vector3.down, 0.5f) && y == 0)
+        if (Physics.Raycast(transform.position, Vector3.down, 0.5f))
         {
             isGrounded = true;
         }
