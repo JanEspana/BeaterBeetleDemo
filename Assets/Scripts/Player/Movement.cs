@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
-        CheckFloor();
+        isGrounded = CheckFloor();
         Jump();
         Dash();
     }
@@ -63,15 +63,13 @@ public class Movement : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         speed /= 5;
     }
-    void CheckFloor()
+    bool CheckFloor()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, 0.5f))
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.1f))
         {
-            isGrounded = true;
+            return true;
         }
-        else
-        {
-            isGrounded = false;
-        }
+        return false;
     }
 }
