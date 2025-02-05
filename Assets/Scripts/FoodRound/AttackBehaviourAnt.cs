@@ -23,8 +23,8 @@ public class AttackBehaviourAnt : AttackBehaviourGeneric
                 enemyController.target.GetComponent<FoodScript>().TakeDamage(1);
             }
             enemyController.stun = 1;
-            enemyController.knockback = 4;
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            enemyController.knockback = 4;
             enemyController.GoToState<KnockbackSO>();
         }
         else
