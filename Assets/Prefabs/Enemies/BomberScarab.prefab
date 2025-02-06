@@ -4996,7 +4996,7 @@ GameObject:
   - component: {fileID: 730772339023052022}
   - component: {fileID: 1480650080034820308}
   m_Layer: 0
-  m_Name: DistanceEnemy
+  m_Name: BomberScarab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

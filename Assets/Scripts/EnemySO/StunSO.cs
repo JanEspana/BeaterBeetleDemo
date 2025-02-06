@@ -25,9 +25,13 @@ public class StunSO : StatesSO
         yield return new WaitForSeconds(ec.stun);
         ec.chase.enabled = true;
         ec.gameObject.GetComponent<Renderer>().material.color = ec.mat.color;
-        if (!ec.isDistance)
+        if (!ec.isDistance && !ec.isFlyingEnemy)
         {
             ec.GoToState<ChaseSO>();
+        }
+        else if (ec.isFlyingEnemy)
+        {
+            ec.GoToState<AttackSO>();
         }
         else
         {

@@ -13,12 +13,12 @@ public class EnemyController : Character
     public int knockback = 5;
     public bool isDistance = true;
     public bool isAnt = false;
+    public bool isFlyingEnemy;
     public bool foodIsAlive = false;
     // Start is called before the first frame update
 
     public void Awake()
     {
-        chase = GetComponent<Chase>();
         attack = GetComponent<AttackBehaviourGeneric>();
         if (isAnt && GameObject.FindGameObjectWithTag("Food") != null)
         {
@@ -52,17 +52,31 @@ public class EnemyController : Character
     }
     public override void CheckIfAlive(bool hasKnockback)
     {
-        if (HP <= 0)
+        if (!isFlyingEnemy)
         {
-            Die();
-        }
-        else if (hasKnockback)
-        {
-            GoToState<KnockbackSO>();
+            if (HP <= 0)
+            {
+                Die();
+            }
+            else if (hasKnockback)
+            {
+                GoToState<KnockbackSO>();
+            }
+            else
+            {
+                GoToState<StunSO>();
+            }
         }
         else
         {
-            GoToState<StunSO>();
+            if (HP <= 0)
+            {
+                Die();
+            }
+            else
+            {
+                GoToState<StunSO>();
+            }
         }
     }
     public override void Die()
