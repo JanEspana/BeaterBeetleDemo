@@ -2445,6 +2445,7 @@ GameObject:
   - component: {fileID: 942314769}
   - component: {fileID: 942314768}
   - component: {fileID: 942314767}
+  - component: {fileID: 942314771}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Floor
@@ -2538,6 +2539,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1958103645}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &942314771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942314766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.033333335
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: b539bc9573c96e4438f1dc58f3002367, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &944985216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,7 +2603,7 @@ MonoBehaviour:
   playerHPBar: {fileID: 364942991}
   enemyHPBar: {fileID: 33593263}
   enemyPrefabs:
-  - {fileID: 3259728546879240063, guid: 844c305d0fee66d4c8dfa08d01fe9a4c, type: 3}
+  - {fileID: 3259728546879240063, guid: ae9f7158d7dbcbd45b00d5e3612e372e, type: 3}
   enemy: {fileID: 0}
   player: {fileID: 0}
   statsMenu: {fileID: 1528741083}
@@ -3255,7 +3287,7 @@ GameObject:
   - component: {fileID: 1178522509}
   - component: {fileID: 1178522515}
   - component: {fileID: 1178522516}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}

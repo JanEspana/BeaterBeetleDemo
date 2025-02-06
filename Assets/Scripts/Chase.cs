@@ -26,7 +26,9 @@ public class Chase : MonoBehaviour
         rb.velocity = direction.normalized * speed;*/
         //usa el AI para perseguir al jugador
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        agent.speed = speed;
         agent.SetDestination(target.position);
+        //cambia la velocidad del agente
     }
     public void StopChase()
     {

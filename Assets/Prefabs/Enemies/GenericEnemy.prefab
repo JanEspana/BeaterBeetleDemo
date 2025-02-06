@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 6031113666443650643}
   - component: {fileID: 730772339023052022}
   - component: {fileID: 5395014725901845625}
+  - component: {fileID: 6986266950288518349}
   m_Layer: 0
   m_Name: GenericEnemy
   m_TagString: Enemy
@@ -210,10 +211,14 @@ MonoBehaviour:
   currentState: {fileID: 11400000, guid: 4f468f96d55804a4bb47b339eea98885, type: 2}
   chase: {fileID: 730772339023052022}
   attack: {fileID: 5395014725901845625}
-  player: {fileID: 0}
+  target: {fileID: 0}
   mat: {fileID: 2100000, guid: 511d108f99f9df0418933daee648a87b, type: 2}
   stun: 0
+  knockback: 5
   isDistance: 1
+  isAnt: 0
+  isFlyingEnemy: 0
+  foodIsAlive: 0
 --- !u!114 &730772339023052022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +249,28 @@ MonoBehaviour:
   attackCooldown: 0.3
   leftPunch: {fileID: 5705530950396767097}
   rightPunch: {fileID: 3552336577709297571}
+--- !u!195 &6986266950288518349
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3259728546879240063}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &3552336577709297571
 GameObject:
   m_ObjectHideFlags: 0
