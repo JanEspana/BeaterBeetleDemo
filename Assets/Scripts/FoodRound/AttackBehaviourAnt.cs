@@ -8,6 +8,7 @@ public class AttackBehaviourAnt : AttackBehaviourGeneric
     private void Awake()
     {
         enemyController = gameObject.GetComponent<EnemyController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
     public override void Attack()
     {
