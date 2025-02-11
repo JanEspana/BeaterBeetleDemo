@@ -8,6 +8,7 @@ TagManager:
   - punch
   - Floor
   - Food
+  - Egg
   layers:
   - Default
   - TransparentFX

@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 536702930}
   - component: {fileID: 536702929}
   - component: {fileID: 536702928}
+  - component: {fileID: 536702936}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -365,7 +366,7 @@ MonoBehaviour:
   speed: 10
   isGrounded: 0
   dashCooldown: 0
-  jumpForce: 10
+  jumpForce: 5
 --- !u!54 &536702931
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -392,7 +393,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &536702932
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -483,6 +484,27 @@ Transform:
   - {fileID: 1759037288}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &536702936
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536702927}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &711163713
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,7 +977,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1059097363
 MonoBehaviour:
   m_ObjectHideFlags: 0

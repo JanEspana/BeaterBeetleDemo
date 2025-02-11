@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6045762685443016926}
   m_Layer: 0
   m_Name: Egg
-  m_TagString: Untagged
+  m_TagString: Egg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,4 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9201547634974b340b6a415667a330fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 1
+  hasKnockback: 0
+  slider: {fileID: 0}
   ant: {fileID: 8976464780881272720, guid: dfaba0cbc26aafc46bb3e2e80f444044, type: 3}
