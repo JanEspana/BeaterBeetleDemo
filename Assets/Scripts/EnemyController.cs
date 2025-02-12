@@ -101,13 +101,13 @@ public class EnemyController : Character
     {
         if (other.gameObject.tag == "Player" && !foodIsAlive)
         {
-            if (attack.attackCooldown < 0 && other.gameObject.GetComponent<Movement>().isGrounded)
+            if (attack.attackCooldown < 0 && other.gameObject.GetComponent<Movement>().isGrounded && !isDistance)
             {
                 GoToState<ChaseSO>();
             }
             else
             {
-                StartCoroutine(ChaseAfterAttack());
+                StartCoroutine(EndAttack());
             }
         }
         else if (other.gameObject.tag == "Food" && isAnt && foodIsAlive)
@@ -116,7 +116,7 @@ public class EnemyController : Character
             GoToState<ChaseSO>();
         }
     }
-    IEnumerator ChaseAfterAttack()
+    IEnumerator EndAttack()
     {
         yield return new WaitForSeconds(attack.attackCooldown);
         GoToState<ChaseSO>();
