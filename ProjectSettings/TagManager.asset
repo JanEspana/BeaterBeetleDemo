@@ -9,6 +9,7 @@ TagManager:
   - Floor
   - Food
   - Egg
+  - Slider
   layers:
   - Default
   - TransparentFX
