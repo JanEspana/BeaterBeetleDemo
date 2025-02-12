@@ -17,7 +17,7 @@ public class Punch : AttackGeneric
                 {
                     other.gameObject.GetComponent<Character>().TakeDamage(dmg);
                 }
-                else if (rivalTag == "Enemy" || rivalTag=="Egg")
+                else if (rivalTag == "Enemy")
                 {
                     other.gameObject.GetComponent<Character>().TakeDamage(dmg);
                 }
