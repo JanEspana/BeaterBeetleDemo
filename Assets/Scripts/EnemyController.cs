@@ -73,10 +73,6 @@ public class EnemyController : Character
             {
                 Die();
             }
-            else
-            {
-                GoToState<StunSO>();
-            }
         }
     }
     public override void Die()

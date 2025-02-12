@@ -55,10 +55,10 @@ public class Movement : MonoBehaviour
                 dashCooldown = 3;
                 StartCoroutine(DeactivateDash());
             }
-            if (dashCooldown > 0)
-            {
-                dashCooldown -= Time.deltaTime;
-            }
+        }
+        else if (dashCooldown > 0)
+        {
+            dashCooldown -= Time.deltaTime;
         }
     }
     IEnumerator DeactivateDash()

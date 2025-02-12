@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7546779776033225949}
   - component: {fileID: 7620491796360747875}
   - component: {fileID: 6031113666443650643}
+  - component: {fileID: 1249609682014175997}
   m_Layer: 0
   m_Name: Wasp
   m_TagString: Enemy
@@ -151,12 +152,27 @@ MonoBehaviour:
   slider: {fileID: 0}
   currentState: {fileID: 11400000, guid: 4f468f96d55804a4bb47b339eea98885, type: 2}
   chase: {fileID: 0}
-  attack: {fileID: 0}
+  attack: {fileID: 1249609682014175997}
   target: {fileID: 0}
   mat: {fileID: 2100000, guid: 511d108f99f9df0418933daee648a87b, type: 2}
   stun: 0
   knockback: 5
   isDistance: 1
   isAnt: 0
-  isFlyingEnemy: 0
+  isFlyingEnemy: 1
   foodIsAlive: 0
+--- !u!114 &1249609682014175997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3259728546879240063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2f8a70628bb2043836f80151ed952d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  attackCooldown: 0
+  rb: {fileID: 7620491796360747875}

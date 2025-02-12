@@ -8,7 +8,11 @@ public class HornAttack : AttackGeneric
     {
         if (other.gameObject.tag == rivalTag)
         {
-            other.gameObject.GetComponent<Character>().hasKnockback = true;
+            if (!(rivalTag == "Enemy" && other.gameObject.GetComponent<EnemyController>().isFlyingEnemy))
+            {
+                other.gameObject.GetComponent<Character>().hasKnockback = true;
+
+            }
             other.gameObject.GetComponent<Character>().TakeDamage(dmg);
         }
     }
