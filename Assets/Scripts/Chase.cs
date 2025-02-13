@@ -8,6 +8,7 @@ public class Chase : MonoBehaviour
 {
     public float speed;
     public float range;
+    NavMeshAgent agent;
     Rigidbody rb;
 
     private void Awake()
@@ -25,7 +26,7 @@ public class Chase : MonoBehaviour
         self.rotation = rotation;
         rb.velocity = direction.normalized * speed;*/
         //usa el AI para perseguir al jugador
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
         agent.SetDestination(target.position);
         //cambia la velocidad del agente
@@ -33,5 +34,6 @@ public class Chase : MonoBehaviour
     public void StopChase()
     {
         rb.velocity = Vector3.zero;
+        agent.SetDestination(transform.position);
     }
 }
