@@ -6,14 +6,18 @@ using UnityEngine;
 public class FoodRoundManager : MonoBehaviour
 {
     //timer
-    public float timeBetweenEggs = 3f;
-    public float totalTimer = 10f;
+    public float timeBetweenEggs;
+    public float totalTimer;
     public float timer;
     public GameObject eggPrefab;
     public GameObject foodPrefab;
     public GameObject roundTimer;
+    public GameObject upgradeMenu;
+    public GameObject roundMenu;
+
     public void Start()
     {
+        roundMenu.SetActive(true);
         StartFoodRound();
     }
     public void StartFoodRound()
@@ -42,5 +46,17 @@ public class FoodRoundManager : MonoBehaviour
             roundTimer.GetComponent<TextMeshProUGUI>().text = (totalTimer - timer).ToString("F0");
             yield return null;
         }
+        //pausa el juego
+        Time.timeScale = 0;
+        //busca todos los objetos con tag enemy y los destruye
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+        Destroy(GameObject.FindGameObjectWithTag("Food"));
+        upgradeMenu.SetActive(true);
+        roundMenu.SetActive(false);
+
     }
 }
