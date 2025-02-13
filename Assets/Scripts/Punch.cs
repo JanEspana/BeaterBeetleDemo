@@ -5,6 +5,11 @@ using UnityEngine;
 public class Punch : AttackGeneric
 {
     public bool blockable;
+    public Vector3 originalPosition;
+    public void Awake()
+    {
+        originalPosition = transform.position;
+    }
     public override void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == rivalTag)

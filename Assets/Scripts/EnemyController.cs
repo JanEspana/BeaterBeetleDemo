@@ -83,7 +83,6 @@ public class EnemyController : Character
 
     private void OnTriggerEnter(Collider other)
     {
-        //falta implementar el ataque de la hormiga
         if (other.gameObject.tag == "Player" && !foodIsAlive)
         {
             GoToState<AttackSO>();

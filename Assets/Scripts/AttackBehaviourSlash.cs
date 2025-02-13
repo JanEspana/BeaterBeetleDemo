@@ -32,16 +32,17 @@ public class AttackBehaviourSlash : AttackBehaviourGeneric
     {
         if (!isAttacking)
         {
-            cut.transform.position += cut.transform.forward * 0.5f;
             isAttacking = true;
             collider.enabled = true;
+            cut.GetComponent<Rigidbody>().AddForce(transform.forward * 100);
             StartCoroutine(ResetCut(cut, collider));
         }
     }
     IEnumerator ResetCut(GameObject cut, BoxCollider collider)
     {
         yield return new WaitForSeconds(0.5f);
-        cut.transform.position -= cut.transform.forward * 0.5f;
+        cut.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        cut.transform.localPosition = cut.GetComponent<Punch>().originalPosition;
         collider.enabled = false;
         isAttacking = false;
         actualCut = Random.Range(0, 2) == 0;

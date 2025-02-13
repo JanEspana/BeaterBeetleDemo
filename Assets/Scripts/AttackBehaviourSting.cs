@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackBehaviourSting : AttackBehaviourGeneric
 {
     public Rigidbody rb;
+    bool isGrounded = false;
     Transform targetPosition;
     public override void Attack()
     {
@@ -14,7 +15,6 @@ public class AttackBehaviourSting : AttackBehaviourGeneric
             transform.LookAt(targetPosition);
             rb.AddForce(transform.forward * 1000);
             attackCooldown = 0;
-
         }
         else if (player.HP > 0 && attackCooldown < 5)
         {
@@ -25,15 +25,17 @@ public class AttackBehaviourSting : AttackBehaviourGeneric
     {
         yield return new WaitForSeconds(2);
         //move up
+        isGrounded = false;
         rb.velocity = new Vector3(0, 2, 0);
 
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.tag == "Player" && !isGrounded)
         {
             player.TakeDamage(3);
         }
+        isGrounded = true;
         rb.velocity = Vector3.zero;
         StartCoroutine(RecoverPosition());
     }
