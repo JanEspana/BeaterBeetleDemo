@@ -5,19 +5,12 @@ using UnityEngine;
 public class AttackBehaviourSlash : AttackBehaviourGeneric
 {
     public GameObject lowCut, crossCut, warningSphere;
-    bool actualCut, isAttacking;
+    public bool actualCut, isAttacking;
     public override void Attack()
     {
         if (attackCooldown <= 0)
         {
-            if (actualCut)
-            {
-                warningSphere.GetComponent<Renderer>().material.color = Color.red;
-            }
-            else
-            {
-                warningSphere.GetComponent<Renderer>().material.color = Color.blue;
-            }
+
 
             if (actualCut && player.HP > 0)
             {
@@ -57,5 +50,13 @@ public class AttackBehaviourSlash : AttackBehaviourGeneric
         isAttacking = false;
         actualCut = Random.Range(0, 2) == 0;
         attackCooldown = 3;
+        if (actualCut)
+        {
+            warningSphere.GetComponent<Renderer>().material.color = Color.red;
+        }
+        else
+        {
+            warningSphere.GetComponent<Renderer>().material.color = Color.blue;
+        }
     }
 }

@@ -36,7 +36,7 @@ public class StunSO : StatesSO
         else
         {
             Vector3 distance = ec.target.transform.position - ec.transform.position;
-            float radius = ec.GetComponentInChildren<SphereCollider>().radius;
+            float radius = ec.GetComponentInChildren<CapsuleCollider>().radius;
             if (distance.magnitude < radius)
             {
                 ec.GoToState<AttackSO>();
