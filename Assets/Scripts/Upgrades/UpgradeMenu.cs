@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeMenu : MonoBehaviour
 {
-    public List<UpgradeSO> upgrades;
-    public static UpgradeMenu instance;
+    public UpgradeSO upgrade;
 
-    public void Start()
+    public void SelectRandomUpgrade()
     {
-        
+        upgrade = UpgradeManager.instance.upgrades[Random.Range(0, UpgradeManager.instance.upgrades.Count)];
+        //elimina o upgrade selecionado da lista
+        UpgradeManager.instance.upgrades.Remove(upgrade);
+        gameObject.GetComponent<Image>().sprite = upgrade.icon.sprite;
+        gameObject.GetComponentInChildren<TextMeshPro>().text = upgrade.upgradeName;
     }
-    //elige un upgrade aleatorio y lo aplica
-    public void ApplyRandomUpgrade()
+    public void ApplyUpgrade()
     {
-        int randomIndex = Random.Range(0, upgrades.Count);
-        upgrades[randomIndex].ApplyUpgrade();
+        upgrade.ApplyUpgrade();
     }
 }
