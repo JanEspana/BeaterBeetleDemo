@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 [CreateAssetMenu(fileName = "New Upgrade", menuName = "Upgrades/Upgrade")]
 public abstract class UpgradeSO : ScriptableObject
 {
-    public Image icon;
+    public Sprite icon;
     public string upgradeName;
 
     public abstract void ApplyUpgrade();

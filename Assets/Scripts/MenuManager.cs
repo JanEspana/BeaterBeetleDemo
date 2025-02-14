@@ -8,26 +8,28 @@ public class MenuManager : MonoBehaviour
 {
     public Slider hpBar, UIhpBar;
     public TextMeshProUGUI calories;
+    public float maxHP = 10;
+    public float healedHP = 3;
     public void ActiveCanvas()
     {
         Player player = GameManager.instance.player.GetComponent<Player>();
-        if (player.HP + 3 > 10)
+        if (player.HP + healedHP > maxHP)
         {
-            player.HP = 10;
+            player.HP = maxHP;
         }
         else
         {
-            player.HP += 3;
+            player.HP += healedHP;
         }
-        hpBar.value = GameManager.instance.player.GetComponent<Player>().HP/10;
-        UIhpBar.value = GameManager.instance.player.GetComponent<Player>().HP / 10;
+        hpBar.value = GameManager.instance.player.GetComponent<Player>().HP/ maxHP;
+        UIhpBar.value = GameManager.instance.player.GetComponent<Player>().HP / maxHP;
         calories.text = GameManager.instance.player.GetComponent<Player>().calories.ToString();
     }
     public void NextBattle()
     {
         GameManager.instance.StartRound();
-        hpBar.value = GameManager.instance.player.GetComponent<Player>().HP / 10;
-        UIhpBar.value = GameManager.instance.player.GetComponent<Player>().HP / 10;
+        hpBar.value = GameManager.instance.player.GetComponent<Player>().HP / maxHP;
+        UIhpBar.value = GameManager.instance.player.GetComponent<Player>().HP / maxHP;
         GameManager.instance.player.gameObject.transform.position = new Vector3(0, 2, 0);
         GameManager.instance.player.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
 
@@ -35,19 +37,19 @@ public class MenuManager : MonoBehaviour
     public void UpgradeHP()
     {
         Player player = GameManager.instance.player.GetComponent<Player>();
-        if (player.HP != 10 && player.calories >= 100)
+        if (player.HP != maxHP && player.calories >= 100)
         {
-            if (player.HP + 1 > 10)
+            if (player.HP + 1 > maxHP)
             {
-                player.HP = 10;
+                player.HP = maxHP;
                 UIhpBar.value = 1;
                 hpBar.value = 1;
             }
             else
             {
                 player.HP += 1;
-                UIhpBar.value = player.HP / 10;
-                hpBar.value = player.HP / 10;
+                UIhpBar.value = player.HP / maxHP;
+                hpBar.value = player.HP / maxHP;
             }
             player.calories -= 100;
             calories.text = player.calories.ToString();
