@@ -25,7 +25,7 @@ public class StunSO : StatesSO
         yield return new WaitForSeconds(ec.stun);
         ec.chase.enabled = true;
         ec.gameObject.GetComponent<Renderer>().material.color = ec.mat.color;
-        if (!ec.isDistance)
+        if (!ec.isDistance && !ec.isFlyingEnemy)
         {
             ec.GoToState<ChaseSO>();
         }
@@ -36,7 +36,8 @@ public class StunSO : StatesSO
         else
         {
             Vector3 distance = ec.target.transform.position - ec.transform.position;
-            if (distance.magnitude < 4.5f)
+            float radius = ec.GetComponentInChildren<SphereCollider>().radius;
+            if (distance.magnitude < radius)
             {
                 ec.GoToState<AttackSO>();
             }

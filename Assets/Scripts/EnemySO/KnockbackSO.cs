@@ -7,7 +7,6 @@ public class KnockbackSO : StatesSO
     public override void OnStateEnter(EnemyController ec)
     {
         ec.chase.enabled = false;
-        //ec.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         Rigidbody rb = ec.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         Knockback(ec, rb);

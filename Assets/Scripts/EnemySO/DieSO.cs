@@ -18,7 +18,6 @@ public class DieSO : StatesSO
         }
         Destroy(ec.gameObject);
     }
-
     public override void OnStateExit(EnemyController ec)
     {
     }
