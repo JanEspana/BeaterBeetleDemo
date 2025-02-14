@@ -478,6 +478,7 @@ MonoBehaviour:
   rivalTag: Enemy
   isRecharged: 1
   blockable: 0
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &481255074
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1422,7 +1423,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 887
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -1790,6 +1791,7 @@ MonoBehaviour:
   rivalTag: Enemy
   isRecharged: 1
   blockable: 0
+  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1759037285
 BoxCollider:
   m_ObjectHideFlags: 0

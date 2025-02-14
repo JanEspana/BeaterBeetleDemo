@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
+using static UnityEngine.GraphicsBuffer;
 
 [CreateAssetMenu(fileName = "KnockbackSO", menuName = "States/KnockbackSO", order = 0)]
 public class KnockbackSO : StatesSO
@@ -8,12 +10,14 @@ public class KnockbackSO : StatesSO
     {
         ec.chase.enabled = false;
         Rigidbody rb = ec.GetComponent<Rigidbody>();
-        rb.velocity = Vector3.zero;
+        ec.GetComponent<NavMeshAgent>().enabled = false;
+        //SetDestination(ec.transform.position);
         Knockback(ec, rb);
     }
 
     public override void OnStateExit(EnemyController ec)
     {
+        ec.GetComponent<NavMeshAgent>().enabled = true;
         ec.chase.enabled = true;
     }
 
