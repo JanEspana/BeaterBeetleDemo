@@ -5,10 +5,10 @@ using UnityEngine;
 public class MantisAnim : AnimGeneric
 {
     public AttackBehaviourSlash abs;
-    private void Update()
+    public override void SpecificAnim()
     {
         currentState = GetComponent<EnemyController>().currentState;
-        if (currentState.GetType() == typeof(AttackSO))
+        if (currentState.GetType() == typeof(AttackSO) && abs.attackCooldown <= 0)
         {
             if (abs.actualCut)
             {

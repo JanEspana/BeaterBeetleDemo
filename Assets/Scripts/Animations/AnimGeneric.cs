@@ -21,6 +21,8 @@ public abstract class AnimGeneric : MonoBehaviour
         else
         {
             anim.SetBool("isWalking", false);
+            SpecificAnim();
         }
     }
+    public abstract void SpecificAnim();
 }

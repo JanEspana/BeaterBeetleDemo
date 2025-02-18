@@ -9,14 +9,14 @@ public class AttackBehaviourSting : AttackBehaviourGeneric
     Transform targetPosition;
     public override void Attack()
     {
-        if (attackCooldown >= 3f && player.HP > 0)
+        if (attackCooldown <= 0 && player.HP > 0)
         {
             targetPosition = player.transform;
             transform.LookAt(targetPosition);
             rb.AddForce(transform.forward * 1000);
-            attackCooldown = 0;
+            attackCooldown = 3;
         }
-        else if (player.HP > 0 && attackCooldown < 5)
+        else if (player.HP > 0 && attackCooldown > 0)
         {
             attackCooldown += Time.deltaTime;
         }
