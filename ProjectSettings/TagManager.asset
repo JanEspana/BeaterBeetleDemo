@@ -10,6 +10,7 @@ TagManager:
   - Food
   - Egg
   - Slider
+  - StatsCanvas
   layers:
   - Default
   - TransparentFX

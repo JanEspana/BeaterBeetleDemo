@@ -7,6 +7,7 @@ public class Player : Character
 {
     public Camera cam;
     public float calories;
+    public float gainedCalories=100;
     public bool isBlocking;
     public override void CheckIfAlive(bool hasKnockback)
     {

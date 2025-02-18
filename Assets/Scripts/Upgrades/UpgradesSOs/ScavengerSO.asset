@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 741d64a3077386143998f66eb19a9636, type: 3}
-  m_Name: TruckPunchSO
+  m_Script: {fileID: 11500000, guid: cb0c88eb2137f4f4c802d2d7fd7ce1ab, type: 3}
+  m_Name: ScavengerSO
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  upgradeName: Truck Punch
-  damageMultiplier: 2
-  cooldown: 0.6
+  upgradeName: Scavenger
+  extraCaloriesPercent: 0.2

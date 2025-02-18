@@ -9,7 +9,7 @@ public class DieSO : StatesSO
     {
         if (ec.GetComponent<Player>() != null)
         {
-            ec.target.GetComponent<Player>().calories += 100;
+            ec.target.GetComponent<Player>().calories += ec.target.GetComponent<Player>().gainedCalories;
 
         }
         if (!ec.isAnt)

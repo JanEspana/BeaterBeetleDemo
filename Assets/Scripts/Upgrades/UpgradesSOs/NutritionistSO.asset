@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: NutritionistSO
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  upgradeName: 
+  upgradeName: Nutritionist
   healthRegen: 0
   menuManager: {fileID: 0}

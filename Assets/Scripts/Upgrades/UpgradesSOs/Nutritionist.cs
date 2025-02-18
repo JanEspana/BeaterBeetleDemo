@@ -9,6 +9,7 @@ public class Nutritionist : UpgradeSO
     public MenuManager menuManager;
     public override void ApplyUpgrade()
     {
+        menuManager = UpgradeManager.instance.menuManager;
         healthRegen = menuManager.maxHP;
         menuManager.healedHP = healthRegen;
     }

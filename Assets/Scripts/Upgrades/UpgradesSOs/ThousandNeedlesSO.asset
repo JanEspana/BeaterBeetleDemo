@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ThousandNeedlesSO
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  upgradeName: 
+  upgradeName: Thousand Needles
   damageMultiplier: 0.5
   cooldown: 0.15
