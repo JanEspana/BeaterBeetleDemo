@@ -16,13 +16,9 @@ public class FoodRoundManager : MonoBehaviour
     public GameObject roundMenu;
     public List<GameObject> UpgradeButtons = new List<GameObject>();
 
-    public void Start()
-    {
-        roundMenu.GetComponent<Canvas>().enabled = true;
-        StartFoodRound();
-    }
     public void StartFoodRound()
     {
+        roundMenu.GetComponent<Canvas>().enabled = true;
         Instantiate(foodPrefab, new Vector3(5, 20, 0), Quaternion.identity);
         StartCoroutine(EggSpawn());
         StartCoroutine(RoundTimer());

@@ -880,7 +880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenEggs: 3
-  totalTimer: 3
+  totalTimer: 30
   timer: 0
   eggPrefab: {fileID: 5370022411559876699, guid: d7afcc695c2f6354a81847c1d3fd232d, type: 3}
   foodPrefab: {fileID: 8381959130147275330, guid: b145b31c4370d8a4f888c299a13e6d64, type: 3}
@@ -5473,6 +5473,8 @@ MonoBehaviour:
   calories: {fileID: 644743956}
   maxHP: 10
   healedHP: 3
+  Round: 1
+  foodRoundManager: {fileID: 269441684}
 --- !u!114 &1528741081
 MonoBehaviour:
   m_ObjectHideFlags: 0
