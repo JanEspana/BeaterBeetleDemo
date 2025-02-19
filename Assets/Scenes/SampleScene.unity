@@ -874,7 +874,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269441683}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48b92ef5931798f47bceeddfe2d96a5d, type: 3}
   m_Name: 
@@ -3327,7 +3327,7 @@ MonoBehaviour:
   playerHPBar: {fileID: 364942991}
   enemyHPBar: {fileID: 33593263}
   enemyPrefabs:
-  - {fileID: 3259728546879240063, guid: ce14662bdca4fb44baf87c661b388068, type: 3}
+  - {fileID: 3259728546879240063, guid: c8bbedc0cdd43f04886672a44335ac75, type: 3}
   enemy: {fileID: 0}
   player: {fileID: 0}
   statsMenu: {fileID: 1528741083}
@@ -4078,6 +4078,7 @@ GameObject:
   - component: {fileID: 1178522509}
   - component: {fileID: 1178522515}
   - component: {fileID: 1178522516}
+  - component: {fileID: 1178522517}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -4217,7 +4218,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1178522515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4255,6 +4256,27 @@ MonoBehaviour:
   calories: 0
   gainedCalories: 100
   isBlocking: 0
+--- !u!135 &1178522517
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178522508}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1178718712
 GameObject:
   m_ObjectHideFlags: 0

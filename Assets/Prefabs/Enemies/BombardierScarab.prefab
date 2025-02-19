@@ -4997,7 +4997,7 @@ GameObject:
   - component: {fileID: 1480650080034820308}
   - component: {fileID: -3882490966312163594}
   m_Layer: 0
-  m_Name: BomberScarab
+  m_Name: BombardierScarab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5036,7 +5036,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3259728546879240063}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5090,8 +5090,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2.6048756, z: 1.1604829}
+  m_Center: {x: 0, y: 0.8024378, z: 0.3345387}
 --- !u!54 &7620491796360747875
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5231,15 +5231,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81c62a4b1e852284baaeaa9439fdac10, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81c62a4b1e852284baaeaa9439fdac10, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81c62a4b1e852284baaeaa9439fdac10, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81c62a4b1e852284baaeaa9439fdac10, type: 3}
       propertyPath: m_LocalRotation.z
@@ -5251,7 +5251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81c62a4b1e852284baaeaa9439fdac10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81c62a4b1e852284baaeaa9439fdac10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
