@@ -14,7 +14,7 @@ public class UpgradeMenu : MonoBehaviour
         //elimina o upgrade selecionado da lista
         UpgradeManager.instance.upgrades.Remove(upgrade);
         gameObject.GetComponent<Image>().sprite = upgrade.icon;
-        gameObject.GetComponentInChildren<TextMeshPro>().text = upgrade.upgradeName;
+        gameObject.GetComponentInChildren<TextMeshProUGUI>().text = upgrade.upgradeName;
     }
     public void ApplyUpgrade()
     {

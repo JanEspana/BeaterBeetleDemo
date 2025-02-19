@@ -14,10 +14,11 @@ public class FoodRoundManager : MonoBehaviour
     public GameObject roundTimer;
     public GameObject upgradeMenu;
     public GameObject roundMenu;
+    public List<GameObject> UpgradeButtons = new List<GameObject>();
 
     public void Start()
     {
-        roundMenu.SetActive(true);
+        roundMenu.GetComponent<Canvas>().enabled = true;
         StartFoodRound();
     }
     public void StartFoodRound()
@@ -54,9 +55,13 @@ public class FoodRoundManager : MonoBehaviour
         {
             Destroy(enemy);
         }
+        foreach (GameObject button in UpgradeButtons)
+        {
+            button.GetComponent<UpgradeMenu>().SelectRandomUpgrade();
+        }
         Destroy(GameObject.FindGameObjectWithTag("Food"));
-        upgradeMenu.SetActive(true);
-        roundMenu.SetActive(false);
+        upgradeMenu.GetComponent<Canvas>().enabled = true;
+        roundMenu.GetComponent<Canvas>().enabled = false;
 
     }
 }

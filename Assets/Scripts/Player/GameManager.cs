@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public void StartRound()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        statsMenu.enabled = false;
+        statsMenu.GetComponent<Canvas>().enabled = false;
         enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)]);
         enemy.GetComponent<Character>().slider = enemyHPBar;
         enemyHPBar.GetComponent<Slider>().value = enemyHPBar.GetComponent<Slider>().maxValue;
