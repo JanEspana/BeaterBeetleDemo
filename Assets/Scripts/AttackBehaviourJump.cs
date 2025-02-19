@@ -19,8 +19,7 @@ public class AttackBehaviourJump : AttackBehaviourGeneric
                 transform.LookAt(targetPosition);
                 jumpForce = CalculateJumpForce(targetPosition, transform);
                 rb.AddForce(transform.forward * jumpForce);
-                rb.AddForce(transform.up * jumpForce);
-                attackCooldown = 3;
+                rb.AddForce(transform.up * jumpForce); attackCooldown = 3;
             }
             else if (player.HP > 0 && attackCooldown > 0)
             {
