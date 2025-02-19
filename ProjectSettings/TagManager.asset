@@ -11,6 +11,7 @@ TagManager:
   - Egg
   - Slider
   - StatsCanvas
+  - GameManager
   layers:
   - Default
   - TransparentFX
