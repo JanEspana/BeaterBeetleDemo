@@ -9,16 +9,16 @@ public class AttackBehaviourDistance : AttackBehaviourGeneric
     public Collider sprayCollider;
     public override void Attack()
     {
-        if (attackCooldown >= 3f && player.HP > 0)
+        if (attackCooldown <= 0 && player.HP > 0)
         {
             sprayCollider.enabled = true;
-            attackCooldown = 0;
+            attackCooldown = 3;
             sprayAttack.Play();
             StartCoroutine(StopAttack());
         }
-        else if (player.HP > 0 && attackCooldown < 3)
+        else if (player.HP > 0 && attackCooldown > 0)
         {
-            attackCooldown += Time.deltaTime;
+            attackCooldown -= Time.deltaTime;
         }
     }
     IEnumerator StopAttack()
