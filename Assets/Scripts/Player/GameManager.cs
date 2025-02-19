@@ -17,12 +17,12 @@ public class GameManager : MonoBehaviour
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         playerHPBar.GetComponent<Slider>().value = playerHPBar.GetComponent<Slider>().maxValue;
+        statsMenu.enabled = false;
         StartRound();
     }
     public void StartRound()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        statsMenu.GetComponent<Canvas>().enabled = false;
+        statsMenu.enabled = false;
         enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)]);
         enemy.GetComponent<Character>().slider = enemyHPBar;
         enemyHPBar.GetComponent<Slider>().value = enemyHPBar.GetComponent<Slider>().maxValue;

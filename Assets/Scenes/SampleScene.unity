@@ -887,6 +887,7 @@ MonoBehaviour:
   roundTimer: {fileID: 1297965275}
   upgradeMenu: {fileID: 1178718712}
   roundMenu: {fileID: 174673932}
+  statsMenu: {fileID: 1528741079}
   UpgradeButtons:
   - {fileID: 1742063116}
   - {fileID: 1625512156}
@@ -1905,7 +1906,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1152906849}
   m_FillRect: {fileID: 1929642772}
   m_HandleRect: {fileID: 1152906848}
@@ -2477,6 +2478,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1528741083}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 944985219}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: NextBattle
@@ -3328,7 +3341,7 @@ MonoBehaviour:
   playerHPBar: {fileID: 364942991}
   enemyHPBar: {fileID: 33593263}
   enemyPrefabs:
-  - {fileID: 919132149155446097, guid: 81c62a4b1e852284baaeaa9439fdac10, type: 3}
+  - {fileID: 3259728546879240063, guid: ce14662bdca4fb44baf87c661b388068, type: 3}
   enemy: {fileID: 0}
   player: {fileID: 0}
   statsMenu: {fileID: 1528741083}
@@ -3366,8 +3379,8 @@ MonoBehaviour:
   maxHP: 10
   healedHP: 3
   Round: 4
-  foodRoundManager: {fileID: 269441684}
   sliderCanvas: {fileID: 1225311443}
+  statsCanvas: {fileID: 1528741079}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
