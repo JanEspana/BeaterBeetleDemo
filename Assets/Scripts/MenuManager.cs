@@ -10,6 +10,9 @@ public class MenuManager : MonoBehaviour
     public TextMeshProUGUI calories;
     public float maxHP = 10;
     public float healedHP = 3;
+    public int Round = 1;
+    public FoodRoundManager foodRoundManager;
+    public GameObject sliderCanvas;
     public void ActiveCanvas()
     {
         Player player = GameManager.instance.player.GetComponent<Player>();
@@ -27,9 +30,21 @@ public class MenuManager : MonoBehaviour
     }
     public void NextBattle()
     {
-        GameManager.instance.StartRound();
-        hpBar.value = GameManager.instance.player.GetComponent<Player>().HP / maxHP;
-        UIhpBar.value = GameManager.instance.player.GetComponent<Player>().HP / maxHP;
+        Round++;
+        if (Round%5 != 0)
+        {
+            GameManager.instance.StartRound();
+            hpBar.value = GameManager.instance.player.GetComponent<Player>().HP / maxHP;
+            UIhpBar.value = GameManager.instance.player.GetComponent<Player>().HP / maxHP;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            foodRoundManager.StartFoodRound();
+            //busca statscanvas
+            GameObject.Find("StatsCanvas").SetActive(false);
+            sliderCanvas.GetComponent<Canvas>().enabled = false;
+        }
         GameManager.instance.player.gameObject.transform.position = new Vector3(0, 2, 0);
         GameManager.instance.player.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
 

@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Canvas statsMenu, hpBars;
     void Awake()
     {
+        menuManager = GameObject.Find("GameManager").GetComponent<MenuManager>();
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         playerHPBar.GetComponent<Slider>().value = playerHPBar.GetComponent<Slider>().maxValue;
