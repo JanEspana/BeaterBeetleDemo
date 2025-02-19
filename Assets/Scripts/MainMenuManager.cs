@@ -20,14 +20,11 @@ public class MainMenuManager : MonoBehaviour
             PlayerPrefs.SetString("username", "Anonymous");
             PlayerPrefs.Save();
         }
-    }
-    private void Start()
-    {
         volumeSlider = GameObject.FindAnyObjectByType<UnityEngine.UI.Slider>();
         settingCanvas = GameObject.Find("SettingsCanvas");
         settingCanvas.SetActive(false);
         username = GameObject.Find("username");
-        username.GetComponent<TMP_InputField>().text = PlayerPrefs.GetString("username"); 
+        username.GetComponent<TMP_InputField>().text = PlayerPrefs.GetString("username");
     }
     public void toggleSettings()
     {

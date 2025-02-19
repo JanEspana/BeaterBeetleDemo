@@ -94,7 +94,7 @@ public class EnemyController : Character
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player" && !foodIsAlive)
+        if (other.gameObject.tag == "Player" && !foodIsAlive && !isFlyingEnemy)
         {
             if (attack.attackCooldown < 0 && other.gameObject.GetComponent<Movement>().isGrounded && !isDistance)
             {

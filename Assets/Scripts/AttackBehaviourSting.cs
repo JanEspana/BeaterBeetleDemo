@@ -18,7 +18,7 @@ public class AttackBehaviourSting : AttackBehaviourGeneric
         }
         else if (player.HP > 0 && attackCooldown > 0)
         {
-            attackCooldown += Time.deltaTime;
+            attackCooldown -= Time.deltaTime;
         }
     }
     IEnumerator RecoverPosition()

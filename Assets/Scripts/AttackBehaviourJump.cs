@@ -5,21 +5,25 @@ using UnityEngine;
 public class AttackBehaviourJump : AttackBehaviourGeneric
 {
     public Rigidbody rb;
-    float jumpForce;
     bool isGrounded = false;
     public bool isInRange = false;
+    float jumpForceX, jumpForceY;
     Transform targetPosition;
     public override void Attack()
     {
         if (!isInRange)
         {
-            if (attackCooldown <= 0 && player.HP > 0)
+            if (attackCooldown <= 0 && player.HP > 0 && isGrounded)
             {
                 targetPosition = player.transform;
                 transform.LookAt(targetPosition);
-                jumpForce = CalculateJumpForce(targetPosition, transform);
-                rb.AddForce(transform.forward * jumpForce);
-                rb.AddForce(transform.up * jumpForce); attackCooldown = 3;
+                jumpForceX = Vector3.Distance(transform.position, targetPosition.position);
+                jumpForceY = 500;
+                rb.AddForce(transform.up * jumpForceY);
+                Debug.Log(jumpForceX);
+                rb.AddForce(transform.forward * jumpForceX * 50);
+                attackCooldown = 3;
+                isGrounded = false;
             }
             else if (player.HP > 0 && attackCooldown > 0)
             {
@@ -31,7 +35,7 @@ public class AttackBehaviourJump : AttackBehaviourGeneric
             if (attackCooldown <= 0 && player.HP > 0 && isGrounded)
             {
                 player.TakeDamage(1);
-                attackCooldown = 3;
+                attackCooldown = 1.5f;
             }
             else if (player.HP > 0 && attackCooldown > 0)
             {
@@ -54,8 +58,11 @@ public class AttackBehaviourJump : AttackBehaviourGeneric
             isInRange = true;
         }
     }
-    float CalculateJumpForce(Transform targetPos, Transform selfPos)
+    private void OnTriggerExit(Collider other)
     {
-        return Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * (targetPos.position.y - selfPos.position.y)) / Mathf.Sin(45 * Mathf.Deg2Rad);
+        if (other.gameObject.tag == "Player")
+        {
+            isInRange = false;
+        }
     }
 }
