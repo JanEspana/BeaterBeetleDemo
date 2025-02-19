@@ -4996,6 +4996,7 @@ GameObject:
   - component: {fileID: 730772339023052022}
   - component: {fileID: 1480650080034820308}
   - component: {fileID: -3882490966312163594}
+  - component: {fileID: 7187088368249569340}
   m_Layer: 0
   m_Name: BombardierScarab
   m_TagString: Enemy
@@ -5197,6 +5198,20 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &7187088368249569340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3259728546879240063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e0a338302a312478fe10ec0c7f9a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 7033522075562987710}
+  currentState: {fileID: 0}
 --- !u!1001 &3528151093367041327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5265,6 +5280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EscarabajoBombardero_Animations
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 81c62a4b1e852284baaeaa9439fdac10, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7e47941d1dca53040939a88477932c1a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5273,5 +5292,10 @@ PrefabInstance:
 --- !u!4 &3998136284423981764 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 81c62a4b1e852284baaeaa9439fdac10, type: 3}
+  m_PrefabInstance: {fileID: 3528151093367041327}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7033522075562987710 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 81c62a4b1e852284baaeaa9439fdac10, type: 3}
   m_PrefabInstance: {fileID: 3528151093367041327}
   m_PrefabAsset: {fileID: 0}
