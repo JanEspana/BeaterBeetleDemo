@@ -3341,7 +3341,11 @@ MonoBehaviour:
   playerHPBar: {fileID: 364942991}
   enemyHPBar: {fileID: 33593263}
   enemyPrefabs:
+<<<<<<< Updated upstream
   - {fileID: 3259728546879240063, guid: ce14662bdca4fb44baf87c661b388068, type: 3}
+=======
+  - {fileID: 3259728546879240063, guid: bb0870a36a46625438f387f03b205b2a, type: 3}
+>>>>>>> Stashed changes
   enemy: {fileID: 0}
   player: {fileID: 0}
   statsMenu: {fileID: 1528741083}
