@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FoodRoundManager : MonoBehaviour
 {
-    //timer
+    public static FoodRoundManager instance;
     public float timeBetweenEggs;
     public float totalTimer;
     public float timer;
@@ -16,6 +17,10 @@ public class FoodRoundManager : MonoBehaviour
     public GameObject roundMenu;
     public List<GameObject> UpgradeButtons = new List<GameObject>();
 
+    private void Awake()
+    {
+        instance = this;
+    }
     public void StartFoodRound()
     {
         roundMenu.GetComponent<Canvas>().enabled = true;
@@ -29,7 +34,7 @@ public class FoodRoundManager : MonoBehaviour
         {
             yield return new WaitForSeconds(timeBetweenEggs);
             //instatiate egg in random position
-            Vector3 randomPos = new Vector3(Random.Range(-20, 20), 2, Random.Range(-20, 20));
+            Vector3 randomPos = new Vector3(Random.Range(-20, 20), 1, Random.Range(-20, 20));
             Instantiate(eggPrefab, randomPos, Quaternion.identity);
         }
         Debug.Log("Food Round Over");
